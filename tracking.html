@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
+  <title>KUMove - Track Bus</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <ul>
@@ -13,19 +14,81 @@
       <li><a href="tracking.html">Track</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
+      <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
 
   <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
+    <h1>Track Your Bus</h1>
+    <p>Select a route to view real-time tracking.</p>
+
+    <!-- Route Selection -->
+    <section class="tracking-section">
+      <label for="route">Choose Route:</label>
+      <select id="route">
+        <option>Campus → Library</option>
+        <option>Dorms → Engineering</option>
+        <option>Science → Main Gate</option>
+      </select>
+
+      <button id="track-btn">Track Bus</button>
+    </section>
+
+    <!-- Bus Info -->
+    <section class="route-map">
+  <h2>Route Progress</h2>
+
+  <div class="route-container">
+    
+    <div class="stop completed">
+      <span>Start</span>
+    </div>
+
+    <div class="line completed"></div>
+
+    <div class="stop completed">
+      <span>Parking</span>
+    </div>
+
+    <div class="line active"></div>
+
+    <div class="stop active">
+      <span>Bus Stop A</span>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="stop">
+      <span>Library</span>
+    </div>
+
+  </div>
+</section>
+    <!-- Map Placeholder -->
+    <section class="map">
+      <h2>Live Map</h2>
+      <div class="map-box">
+        <p>[ Map will be displayed here ]</p>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Kuwait University</p>
   </footer>
+
+  <!-- Simple JS -->
+  <script>
+    const btn = document.getElementById("track-btn");
+    const info = document.getElementById("bus-info");
+
+    btn.addEventListener("click", function () {
+      info.style.display = "block";
+    });
+  </script>
+
 </body>
 </html>

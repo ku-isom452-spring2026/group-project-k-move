@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
+  <title>KUMove - Settings</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+     <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Track</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="settings.html">Settings</a></li>
@@ -19,13 +20,69 @@
 
   <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
+    <h1>Settings</h1>
+    <p>Customize your app preferences.</p>
+
+    <section class="settings-section">
+
+      <!-- Language -->
+      <div class="setting-item">
+        <label for="language">Language:</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+        </select>
+      </div>
+
+      <!-- Theme -->
+      <div class="setting-item">
+        <label for="theme">Theme:</label>
+        <select id="theme">
+          <option value="light">Light Mode</option>
+          <option value="dark">Dark Mode</option>
+        </select>
+      </div>
+
+      <!-- Audio Assistant -->
+      <div class="setting-item">
+        <label for="audio">Audio Assistant:</label>
+        <select id="audio">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+
+      <!-- Booking Notifications -->
+      <div class="setting-item">
+        <label for="booking">Booking Notifications:</label>
+        <select id="booking">
+          <option value="on">On</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Kuwait University</p>
   </footer>
+
+  <!-- Simple JS Example -->
+  <script>
+    const themeSelect = document.getElementById("theme");
+
+    themeSelect.addEventListener("change", function () {
+      if (this.value === "dark") {
+        document.body.style.backgroundColor = "#222";
+        document.body.style.color = "#fff";
+      } else {
+        document.body.style.backgroundColor = "#fff";
+        document.body.style.color = "#000";
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
+  <title>KUMove - Notifications</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <ul>
@@ -13,19 +14,44 @@
       <li><a href="tracking.html">Track</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
+      <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
 
   <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
+    <h1>Notifications</h1>
+    <p>Stay updated with your trips and bus status.</p>
+
+    <!-- Notifications List -->
+    <section id="notifications-list">
+
+      <div class="notification-item">
+        <p>🚌 Your bus to Engineering will arrive in 5 minutes.</p>
+        <span class="time">2 min ago</span>
+      </div>
+
+      <div class="notification-item">
+        <p>✅ Booking confirmed for Route: Campus → Library.</p>
+        <span class="time">10 min ago</span>
+      </div>
+
+      <div class="notification-item">
+        <p>⚠️ Bus delay on Route: Dorms → Science (10 minutes delay).</p>
+        <span class="time">30 min ago</span>
+      </div>
+
+    </section>
+
+    <!-- Clear Notifications -->
+    <button id="clear-btn">Clear All</button>
+
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Kuwait University</p>
   </footer>
+
 </body>
 </html>

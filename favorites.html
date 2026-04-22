@@ -2,30 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
+  <title>KUMove - Favorites</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navigation -->
-  <nav>
+   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Track</a></li>
       <li><a href="booking.html">Book</a></li>
       <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
+      <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
 
   <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
+    <h1>Your Favorite Routes</h1>
+    <p>Quickly access your saved bus routes.</p>
+
+    <!-- Favorites List -->
+    <section id="favorites-list">
+      <div class="favorite-item">
+        <h3>Route 1: Campus → Library</h3>
+        <button>Track</button>
+        <button>Book</button>
+        <button class="remove">Remove</button>
+      </div>
+
+      <div class="favorite-item">
+        <h3>Route 2: Dorms → Engineering</h3>
+        <button>Track</button>
+        <button>Book</button>
+        <button class="remove">Remove</button>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Kuwait University</p>
   </footer>
+
 </body>
 </html>

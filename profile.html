@@ -2,39 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUMove - My Profile</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- Site Header: logo left, greeting right -->
+  <header class="site-header">
+    <a href="index.html" class="logo">KU<span>Move</span></a>
+    <span id="greeting"></span>
+  </header>
+
   <nav>
-    <ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Track</a></li>
-      <li><a href="booking.html">Book</a></li>
+
+      <!-- Booking with submenu -->
+      <li class="has-sub">
+        <a href="booking.html">Book</a>
+        <ul class="submenu">
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="mybookings.html">My Bookings</a></li>
+        </ul>
+      </li>
+
+      <li><a href="favorites.html">Favorites</a></li>
       <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
+
+      <!-- Profile with submenu -->
+      <li class="has-sub  active-parent">
+        <a href="profile.html">Profile</a>
+        <ul class="submenu">
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+        </ul>
+      </li>
+
     </ul>
   </nav>
 
-  <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
-  </main>
-  <!-- Profile Content -->
-  <main>
-
     <h1>My Profile</h1>
-    <section class="card">
-      <h2>Account Access</h2>
-      <p>If you are not logged in, please <a href="login.html" class="btn">Login</a> to access all features.</p>
-    </section>
+
     <section class="card">
       <h2>User Information</h2>
-      <p><strong>Name:</strong> Zeinab Sharif</p>
-      <p><strong>University ID:</strong> KU123456</p>
-      <p><strong>Email:</strong> zeinab@ku.edu.kw</p>
+      <!-- These are filled in by profile.js from localStorage -->
+      <p><strong>Name:</strong> <span id="prof-name">—</span></p>
+      <p><strong>University ID:</strong> <span id="prof-id">—</span></p>
+      <p><strong>Email:</strong> <span id="prof-email">—</span></p>
+      <p style="margin-top:14px;">
+        <a href="login.html" class="btn" style="font-size:13px; padding:8px 16px;">
+          Change Account
+        </a>
+      </p>
     </section>
 
     <section class="card">
@@ -42,12 +67,42 @@
       <ul class="profile-links">
         <li><a href="mybookings.html" class="btn">My Bookings</a></li>
         <li><a href="favorites.html" class="btn">Favorites</a></li>
+        <li><a href="notifications.html" class="btn">Alerts</a></li>
       </ul>
     </section>
   </main>
-  <!-- Footer -->
+
   <footer>
-    <p>&copy; 2026 Kuwait University</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">KU<span>Move</span></div>
+        <p>Kuwait University smart campus bus system.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tracking.html">Track Bus</a></li>
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Kuwait University &mdash; KUMove. All rights reserved.
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
 </body>
 </html>

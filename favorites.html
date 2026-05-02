@@ -2,49 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KUMove - Favorites</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-   <nav>
-    <ul>
+  <!-- Site Header: logo left, greeting right -->
+  <header class="site-header">
+    <a href="index.html" class="logo">KU<span>Move</span></a>
+    <span id="greeting"></span>
+  </header>
+
+  <nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Track</a></li>
-      <li><a href="booking.html">Book</a></li>
+
+      <!-- Booking with submenu -->
+      <li class="has-sub">
+        <a href="booking.html">Book</a>
+        <ul class="submenu">
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="mybookings.html">My Bookings</a></li>
+        </ul>
+      </li>
+
+      <li><a href="favorites.html"  class='active'>Favorites</a></li>
       <li><a href="settings.html">Settings</a></li>
-      <li><a href="profile.html">Profile</a></li>
+
+      <!-- Profile with submenu -->
+      <li class="has-sub">
+        <a href="profile.html">Profile</a>
+        <ul class="submenu">
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+        </ul>
+      </li>
+
     </ul>
   </nav>
 
-  <!-- Page Content -->
   <main>
     <h1>Your Favorite Routes</h1>
     <p>Quickly access your saved bus routes.</p>
 
-    <!-- Favorites List -->
     <section id="favorites-list">
       <div class="favorite-item">
-        <h3>Route 1: Campus → Library</h3>
-        <button>Track</button>
-        <button>Book</button>
-        <button class="remove">Remove</button>
+        <h3>Route 1: Campus &rarr; Library</h3>
+        <div class="btn-row">
+          <button>Track</button>
+          <button>Book</button>
+          <button class="remove">Remove</button>
+        </div>
       </div>
-
       <div class="favorite-item">
-        <h3>Route 2: Dorms → Engineering</h3>
-        <button>Track</button>
-        <button>Book</button>
-        <button class="remove">Remove</button>
+        <h3>Route 2: Dorms &rarr; Engineering</h3>
+        <div class="btn-row">
+          <button>Track</button>
+          <button>Book</button>
+          <button class="remove">Remove</button>
+        </div>
       </div>
     </section>
+
+    <div class="add-favorite-section">
+      <h2>Add a Favorite Route</h2>
+      <form id="add-favorite-form">
+        <div class="form-group">
+          <label for="new-route-name">Route Name:</label>
+          <input type="text" id="new-route-name" placeholder="e.g. Route 3: Science &rarr; Main Gate">
+          <span class="error-msg" id="add-route-error"></span>
+        </div>
+        <button type="submit">Add Route</button>
+      </form>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Kuwait University</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">KU<span>Move</span></div>
+        <p>Kuwait University smart campus bus system.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tracking.html">Track Bus</a></li>
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Kuwait University &mdash; KUMove. All rights reserved.
+    </div>
   </footer>
 
+  <script src="js/main.js"></script>
+  <script src="js/favorites.js"></script>
 </body>
 </html>

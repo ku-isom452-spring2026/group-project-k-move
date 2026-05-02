@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>KU Move - Routes</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUMove - Routes</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<!-- Navigation -->
-<nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="tracking.html">Track</a></li>
-<li><a href="booking.html">Book</a></li>
-<li><a href="mybookings.html">My Bookings</a></li>
-<li><a href="routes.html">Routes</a></li>
-<li><a href="settings.html">Settings</a></li>
-<li><a href="profile.html">Profile</a></li>
-</ul>
-</nav>
- 
-  <!-- Page Content -->
-<main>
-<h1>Bus Routes</h1>
-<p>Explore all available campus bus routes and their schedules.</p>
- 
+
+  <!-- Site Header: logo left, greeting right -->
+  <header class="site-header">
+    <a href="index.html" class="logo">KU<span>Move</span></a>
+    <span id="greeting"></span>
+  </header>
+
+  <nav>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tracking.html"  class='active'>Track</a></li>
+
+      <!-- Booking with submenu -->
+      <li class="has-sub">
+        <a href="booking.html">Book</a>
+        <ul class="submenu">
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="mybookings.html">My Bookings</a></li>
+        </ul>
+      </li>
+
+      <li><a href="favorites.html">Favorites</a></li>
+      <li><a href="settings.html">Settings</a></li>
+
+      <!-- Profile with submenu -->
+      <li class="has-sub">
+        <a href="profile.html">Profile</a>
+        <ul class="submenu">
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Bus Routes</h1>
+    <p>All available routes on the KUMove network.</p>
     <section class="dashboard">
- 
       <div class="card">
-<h2>Route 1</h2>
-<p><strong>From:</strong> Main Gate</p>
-<p><strong>To:</strong> College of Business</p>
-<p><strong>Operating Hours:</strong> 8:00 AM - 4:00 PM</p>
-<p><strong>Status:</strong> On Time</p>
-<a href="booking.html" class="btn">Book This Route</a>
-</div>
- 
+        <h2>Route 1</h2>
+        <p>Campus &rarr; Library</p>
+        <p><strong>First bus:</strong> 7:00 AM &nbsp; <strong>Last bus:</strong> 9:00 PM</p>
+        <a href="booking.html" class="btn" style="margin-top:14px;">Book</a>
+      </div>
       <div class="card">
-<h2>Route 2</h2>
-<p><strong>From:</strong> Student Parking</p>
-<p><strong>To:</strong> Engineering Campus</p>
-<p><strong>Operating Hours:</strong> 8:30 AM - 4:30 PM</p>
-<p><strong>Status:</strong> Delayed</p>
-<a href="booking.html" class="btn">Book This Route</a>
-</div>
- 
+        <h2>Route 2</h2>
+        <p>Dorms &rarr; Engineering</p>
+        <p><strong>First bus:</strong> 7:30 AM &nbsp; <strong>Last bus:</strong> 8:30 PM</p>
+        <a href="booking.html" class="btn" style="margin-top:14px;">Book</a>
+      </div>
       <div class="card">
-<h2>Route 3</h2>
-<p><strong>From:</strong> Library</p>
-<p><strong>To:</strong> Science Campus</p>
-<p><strong>Operating Hours:</strong> 9:00 AM - 5:00 PM</p>
-<p><strong>Status:</strong> On Time</p>
-<a href="booking.html" class="btn">Book This Route</a>
-</div>
- 
-      <div class="card">
-<h2>Route 4</h2>
-<p><strong>From:</strong> Dormitories</p>
-<p><strong>To:</strong> Main Campus</p>
-<p><strong>Operating Hours:</strong> 7:30 AM - 3:30 PM</p>
-<p><strong>Status:</strong> On Time</p>
-<a href="booking.html" class="btn">Book This Route</a>
-</div>
- 
+        <h2>Route 3</h2>
+        <p>Science &rarr; Main Gate</p>
+        <p><strong>First bus:</strong> 8:00 AM &nbsp; <strong>Last bus:</strong> 7:00 PM</p>
+        <a href="booking.html" class="btn" style="margin-top:14px;">Book</a>
+      </div>
     </section>
-</main>
- 
-  <!-- Footer -->
-<footer>
-<p>&copy; 2026 Kuwait University</p>
-</footer>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">KU<span>Move</span></div>
+        <p>Kuwait University smart campus bus system.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tracking.html">Track Bus</a></li>
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Kuwait University &mdash; KUMove. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

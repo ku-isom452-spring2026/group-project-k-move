@@ -2,46 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KUMove - Home</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KUMove - Book a Seat</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- Site Header: logo left, greeting right -->
+  <header class="site-header">
+    <a href="index.html" class="logo">KU<span>Move</span></a>
+    <span id="greeting"></span>
+  </header>
+
   <nav>
-    <ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="tracking.html">Track</a></li>
-      <li><a href="booking.html">Book</a></li>
+
+      <!-- Booking with submenu -->
+      <li class="has-sub  active-parent">
+        <a href="booking.html">Book</a>
+        <ul class="submenu">
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="mybookings.html">My Bookings</a></li>
+        </ul>
+      </li>
+
+      <li><a href="favorites.html">Favorites</a></li>
       <li><a href="settings.html">Settings</a></li>
-        <li><a href="profile.html">Profile</a></li>
+
+      <!-- Profile with submenu -->
+      <li class="has-sub">
+        <a href="profile.html">Profile</a>
+        <ul class="submenu">
+          <li><a href="profile.html">My Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+        </ul>
+      </li>
+
     </ul>
   </nav>
 
-  <!-- Page Content -->
   <main>
-    <h1>Welcome to KU Move</h1>
-    <p>Real-time bus tracking and booking system.</p>
-    <form>
-  <label for="route">Route:</label>
-  <select id="route" name="route">
-    <option>Route 1</option>
-    <option>Route 2</option>
-  </select>
+    <h1>Book a Seat</h1>
+    <p>Choose your route, time, and seat number.</p>
 
-  <label for="time">Time:</label>
-  <input type="time" id="time" name="time">
+    <div class="form-wrapper">
+      <form id="bookingForm">
 
-  <label for="seat">Seat Number:</label>
-  <input type="number" id="seat" name="seat">
+        <div class="form-group">
+          <label for="route">Route:</label>
+          <select id="route">
+            <option value="">-- Select a Route --</option>
+            <option>Route 1: Campus &rarr; Library</option>
+            <option>Route 2: Dorms &rarr; Engineering</option>
+            <option>Route 3: Science &rarr; Main Gate</option>
+          </select>
+          <span class="error-msg" id="route-error"></span>
+        </div>
 
-  <button type="submit">Confirm Booking</button>
-</form>
+        <div class="form-group">
+          <label for="time">Departure Time:</label>
+          <input type="time" id="time">
+          <span class="error-msg" id="time-error"></span>
+        </div>
 
+        <div class="form-group">
+          <label for="seat">Seat Number (1&ndash;50):</label>
+          <input type="number" id="seat" min="1" max="50" placeholder="e.g. 12">
+          <span class="error-msg" id="seat-error"></span>
+        </div>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2026 Kuwait University</p>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">KU<span>Move</span></div>
+        <p>Kuwait University smart campus bus system.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="tracking.html">Track Bus</a></li>
+          <li><a href="booking.html">Book a Seat</a></li>
+          <li><a href="favorites.html">Favorites</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="notifications.html">Alerts</a></li>
+          <li><a href="settings.html">Settings</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Kuwait University &mdash; KUMove. All rights reserved.
+    </div>
   </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
 </body>
 </html>
